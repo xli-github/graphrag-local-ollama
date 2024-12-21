@@ -116,6 +116,7 @@ Pass the path to the .graphml file to the below line in visualize-graphml.py:
     python visualize-graphml.py
     ```
 
+It is possible to use plotly for the visualization. see the code in visualize-graphml.py
 
 
 ## Citations
