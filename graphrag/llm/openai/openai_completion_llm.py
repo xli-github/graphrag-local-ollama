@@ -13,6 +13,7 @@ from graphrag.llm.types import (
     CompletionOutput,
     LLMInput,
 )
+import ollama
 
 from .openai_configuration import OpenAIConfiguration
 from .types import OpenAIClientTypes
@@ -41,3 +42,11 @@ class OpenAICompletionLLM(BaseLLM[CompletionInput, CompletionOutput]):
         )
         completion = self.client.completions.create(prompt=input, **args)
         return completion.choices[0].text
+        
+        #for the 0.3.0 this worked. but the new code had completion = xxx which does not work anymore
+        #embedding_list = []
+        #for inp in input:
+        #    embedding = ollama.embeddings(model=self._configuration.model, prompt=inp)
+        #    embedding_list.append(embedding["embedding"])
+        #return embedding_list
+    
